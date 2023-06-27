@@ -1,0 +1,5 @@
+# R dev files
+.Rproj.user/
+*.Rproj
+*.Rhistory
+*.RData
