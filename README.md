@@ -1,3 +1,5 @@
+# R-merge-zips
+
 ## A simple program to merge zip codes areas based on a user-provided csv file of zipcode to zipcode region mappings.
 
 ### Usage
