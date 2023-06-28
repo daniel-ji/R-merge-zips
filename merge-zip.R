@@ -64,10 +64,8 @@ for (cluster in unique_clusters) {
     merged_multipolygons <- append(merged_multipolygons, list(union_multipolygon))
 }
 
-merged_multipolygons <- do.call(rbind, merged_multipolygons)
-
 # merge all the clusters into one multipolygon, but preserve boundaries
-merged_multipolygon <- st_combine(merged_multipolygons)
+merged_multipolygon <- do.call(rbind, merged_multipolygons)
 
 if (draw_plots) {
     plot(st_combine(zips))
