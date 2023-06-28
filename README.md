@@ -2,18 +2,33 @@
 
 ## A simple program to merge zip codes areas based on a user-provided csv file of zipcode to zipcode region mappings.
 
-### Usage
+### Configuration & Usage
 1. Git clone this repo and install necessary R packages (sf, r2r).
 2. Create a csv file with two columns: `zipcode` and `cluster`.
-3. Run 
-```
-Rscript merge-zip.R <zip_shapefile_input> <zip_clusters_input_csv_file> <zip_merged_shapefile_output> [zip_shapefile_identifier]
-```
-For example, with the provided sd-zip/ data:  
-```
-Rscript merge-zip.R sd-zip/sd-zip.shp sd-zip/sd-zipcode-clusters.csv sd-zip/sd-zip-merged.shp
-```
-Alternatively, run without parameters to use variables in the script. 
+3. Usage: 
+	``` 
+	Rscript merge-zip.R [options]
+		-i INPUT, --input=INPUT
+				Input shapefile
+		-c CLUSTERS, --clusters=CLUSTERS
+				Input csv file with zip -> cluster mapping
+		-o OUTPUT, --output=OUTPUT
+				Output shapefile
+		-s SHAPEFILE-IDENTIFIER, --shapefile-identifier=SHAPEFILE-IDENTIFIER
+				Shapefile identifier
+		-p, --draw-plots
+				Draw plots
+		-r, --override-existing-output
+				Override existing output
+		-h, --help
+				Show this help message and exit
+	```
+	Example: 
+	```
+	Rscript merge-zip.R -i sd-zip/sd-zip.shp -c sd-zip/sd-zipcode-clusters.csv -o sd-zip/sd-zip-merged.shp -s zip -p -r
+	```
+	__Note: If any parameters are not provided, the program will use the values hard-coded in the script.__
+
 4. The output is a shapefile with the merged zip code areas.
 
 ### Example files
